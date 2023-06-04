@@ -1,12 +1,18 @@
-import './App.css'
+import { FormTask } from './components/FormTask'
 import { Header } from './components/Header'
+
+import styles from './App.module.css'
 
 function App() {
 
   return (
     <>
       <Header />
-      <p>Olá</p>
+      <div className={styles.wrapper}>
+        <FormTask />
+
+        <p>Olá</p>
+      </div>
     </>
   )
 }
