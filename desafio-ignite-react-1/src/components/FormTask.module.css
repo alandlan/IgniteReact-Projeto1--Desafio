@@ -7,7 +7,7 @@
 
 .formAddTask__input{
     border-radius: 4px;
-    width: 30rem;
+    width: 100%;
     height: 16px;
     padding: 16px;
     border: 1px solid var(--gray-600);

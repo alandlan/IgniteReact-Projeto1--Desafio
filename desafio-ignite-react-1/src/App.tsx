@@ -1,5 +1,6 @@
-import { FormTask } from './components/FormTask'
 import { Header } from './components/Header'
+import { FormTask } from './components/FormTask'
+import { ListTask } from './components/ListTask'
 
 import styles from './App.module.css'
 
@@ -8,11 +9,11 @@ function App() {
   return (
     <>
       <Header />
-      <div className={styles.wrapper}>
+      <section className={styles.wrapper}>
         <FormTask />
-
-        <p>Olá</p>
-      </div>
+        <ListTask />
+        
+      </section>
     </>
   )
 }
