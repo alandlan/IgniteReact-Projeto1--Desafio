@@ -2,8 +2,9 @@ import { Header } from './components/Header'
 
 import styles from './App.module.css'
 
-import { PlusCircle, Trash } from 'phosphor-react'
+import { PlusCircle } from 'phosphor-react'
 import { useState } from 'react';
+import { Task } from './components/Task';
 
 interface Task {
   id: string;
@@ -27,6 +28,10 @@ function App() {
     if (!("value" in element)) {
         throw new Error(`Element is not a form field element`);
     }
+  }
+
+  function handleRemoveTask(task: string){
+    setNewTasks(newtasks.filter(t=>t.id !== task));
   }
 
   return (
@@ -54,24 +59,13 @@ function App() {
             </div>
             <div className={styles.listItem}>
                 <ul>
-                  {newtasks.map((task) => {
-                    return (
-                      <li key={task.id} className={styles.item}>
-                          <div>
-                              <div className={styles.checkbox}>
-                                  <input onChange={() => {}} type="checkbox" checked={task.completed} />
-                              </div>          
-                              <div>
-                                  <label>{task.description}</label>
-                              </div>
-                          </div>
-                          <div>
-
-                              <Trash size={24} />
-                          </div>
-                      </li>
-                    )
-                  })}
+                  {newtasks.map((task) => (
+                    <Task
+                      key={task.id}
+                      content={task.description}
+                      completed={task.completed}
+                      handleRemoveTask={handleRemoveTask} />
+                  ))}
                     
                 </ul>
             </div>

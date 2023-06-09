@@ -1,0 +1,22 @@
+.item{
+    display: flex;
+    justify-content: space-between;
+    background: var(--gray-500);
+    height: 2.5rem;
+    padding: 1rem;
+    border-radius: 4px;
+    gap: 1rem;
+}
+
+.item > div {
+    display: inline-flex;
+    gap: 1rem;
+}
+
+.checkbox{
+    height: 80%;
+}
+
+.removeTask{
+    cursor: pointer;
+}
