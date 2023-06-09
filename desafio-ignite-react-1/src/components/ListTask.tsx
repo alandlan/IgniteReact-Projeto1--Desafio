@@ -1,8 +1,6 @@
 import { Trash } from 'phosphor-react'
 import styles from './ListTask.module.css'
 
-const a = 1;
-
 export function ListTask() {
     return (
         <section className={styles.list}>

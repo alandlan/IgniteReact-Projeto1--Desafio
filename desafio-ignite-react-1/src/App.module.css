@@ -20,3 +20,85 @@
         margin: 0 1rem;
     }
 }
+
+
+
+
+
+.formAddTask{
+    margin-top: calc(0px - 1.5rem - 4px);
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.formAddTask__input{
+    border-radius: 4px;
+    width: 100%;
+    height: 16px;
+    padding: 16px;
+    border: 1px solid var(--gray-600);
+    margin-right: 8px;
+}
+
+.formAddTask__button{
+    width: 5rem;
+    border-radius: 4px;
+    border: none;
+    background: var(--blue-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.formAddTask__button:hover{
+    background: var(--blue-500);
+}
+
+@media (max-width: 768px) {
+    .formAddTask__button > label{
+        display: none;
+    }
+}
+
+.list{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+    display: flow-root;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.listItem{
+    margin-top: 1.5rem;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    background: var(--gray-500);
+    height: 2.5rem;
+    padding: 1rem;
+    border-radius: 4px;
+    gap: 1rem;
+}
+
+.item > div {
+    display: inline-flex;
+    gap: 1rem;
+}
+
+.checkbox{
+    height: 80%;
+}
