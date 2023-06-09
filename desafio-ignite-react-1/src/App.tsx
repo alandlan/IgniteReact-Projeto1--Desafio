@@ -34,6 +34,16 @@ function App() {
     setNewTasks(newtasks.filter(t=>t.id !== task));
   }
 
+  function handleDoTask(task: string){
+    const tasks = newtasks.map(t=>{ 
+      if(t.id === task){
+        t.completed = !t.completed;
+      }
+      return t;
+    })
+    setNewTasks(tasks);
+  }
+
   return (
     <>
       <Header />
@@ -64,7 +74,8 @@ function App() {
                       key={task.id}
                       content={task.description}
                       completed={task.completed}
-                      handleRemoveTask={handleRemoveTask} />
+                      handleRemoveTask={handleRemoveTask}
+                      handleDoTask={handleDoTask} />
                   ))}
                     
                 </ul>

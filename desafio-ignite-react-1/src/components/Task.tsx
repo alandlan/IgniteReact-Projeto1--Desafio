@@ -7,9 +7,10 @@ interface TaskProps {
     content: string;
     completed: boolean;
     handleRemoveTask: (comment: string) => void;
+    handleDoTask: (comment: string) => void;
 }
 
-export function Task({ content,completed,handleRemoveTask }: TaskProps) {
+export function Task({ content,completed,handleRemoveTask,handleDoTask }: TaskProps) {
     const [isCompleted, setIsCompleted] = useState(completed);
     
     function handleDelete() {
@@ -17,6 +18,7 @@ export function Task({ content,completed,handleRemoveTask }: TaskProps) {
     }
 
     function handleDo() {
+        handleDoTask(content);
         setIsCompleted(!isCompleted);
     }
 
