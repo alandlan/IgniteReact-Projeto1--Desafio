@@ -1,6 +1,7 @@
 
 import { Trash } from 'phosphor-react';
 import styles from './Task.module.css'
+import { useState } from 'react';
 
 interface TaskProps {
     content: string;
@@ -9,21 +10,31 @@ interface TaskProps {
 }
 
 export function Task({ content,completed,handleRemoveTask }: TaskProps) {
+    const [isCompleted, setIsCompleted] = useState(completed);
+    
     function handleDelete() {
         handleRemoveTask(content);
+    }
+
+    function handleDo() {
+        setIsCompleted(!isCompleted);
     }
 
     return (
         <li className={styles.item}>
             <div>
                 <div className={styles.checkbox}>
-                    <input onChange={() => {}} type="checkbox" checked={completed} />
+                    <input onChange={handleDo} type="checkbox" checked={isCompleted} />
                 </div>          
                 <div>
-                    <label>{content}</label>
+                    {isCompleted ? 
+                        <label><s>{content}</s></label> :
+                        <label>{content}</label> 
+                    }
+                    
                 </div>
             </div>
-            <button onClick={handleDelete}>
+            <button onClick={handleDelete} className={styles.buttonRemoveTask}>
 
                 <Trash  className={styles.removeTask} size={24} />
             </button>

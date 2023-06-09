@@ -17,6 +17,11 @@
     height: 80%;
 }
 
+.buttonRemoveTask{
+    border: none;
+    background: transparent;
+}
+
 .removeTask{
     cursor: pointer;
 }
